@@ -1,0 +1,37 @@
+.sidebar {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    top: 3.5125rem;
+    right: auto;
+    z-index: 20;
+    display: none;
+    height: 100%;
+    overflow-y: auto;
+    border-right-width: 1px;
+    --tw-bg-opacity: 1;
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 2.5rem
+}
+@media (min-width: 640px) {
+    .sidebar {
+        width: 15.5rem
+    }
+}
+@media (min-width: 1024px) {
+    .sidebar {
+        display: block
+    }
+}
+@media (min-width: 1280px) {
+    .sidebar {
+        top: auto;
+        right: auto;
+        bottom: auto;
+        left: auto
+    }
+}

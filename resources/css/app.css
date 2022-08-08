@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @import url('./header.css');
+  @import url('./sidebar.css');
+}
+
+
+.owl-carousel .owl-stage-outer, .owl-stage,.owl-item>.item>img {
+    @apply max-h-96
+}
+.owl-item>.item>img {
+    @apply object-cover rounded-md
+}
+
