@@ -15,3 +15,61 @@
     @apply object-cover rounded-md
 }
 
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.dropdown-action {
+    width: 100%;
+    background-color: #091540;
+    color: white;
+    padding: 0.5em 0.5em;
+    border-radius: 0.25em;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.dropdown-content {
+    padding: 0 0.2em;
+    max-height: 0;
+    transition: max-height 0.5s ease-in-out;
+    overflow: hidden;
+    background-color: #C5E0FC;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.dropdown-content * {
+    animation: fadeOut 0.5s ease-in-out;
+    opacity: 0;
+    padding: .5em;
+}
+
+.dropdown-action.active-dropdown + .dropdown-content * {
+    animation: fadeIn 0.5s ease-in-out;
+    opacity: 1;
+}

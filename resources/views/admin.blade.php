@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html  lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
-
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <title>{{ config('app.name', 'Laravel') }}</title>
     @include('components.admin.layouts.header')
 
     @yield('internalStyle')
@@ -32,6 +33,22 @@
         @include('components.admin.layouts.footer')
 
         @yield('internallStyle')
+        <script>
+            function dropDown(e) {
+                let dropdownContent = e.nextElementSibling;
+                if (e.classList.contains("active-dropdown")) 
+                {
+                    dropdownContent.style.maxHeight = 0;
+                    e.classList.remove("active-dropdown");
+                } 
+                else 
+                {
+                    dropdownContent.style.maxHeight = dropdownContent.scrollHeight + "px";
+                    e.classList.add("active-dropdown");
+                }
+            }
+
+        </script>
         
     </div>
 </body>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" 
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" 
     x-data="{ darkMode: localStorage.getItem('dark') === 'true'} " 
     x-init="$watch('darkMode', val => localStorage.setItem('dark', val))" 
     :class="{ 'dark': darkMode }">
@@ -12,7 +12,7 @@
 </head>
 <body class="bg-white dark:bg-slate-900">
     <div>
-        @include('components.web.layouts.navigation')
+        @include('components.admin.layouts.navigation')
 
         <div class="max-w-[100rem] mx-auto">
             <div class="sidebar">
@@ -32,5 +32,21 @@
         @yield('internalScript')
         
     </div>
+    <script>
+        function dropDown(e) {
+            let dropdownContent = e.nextElementSibling;
+            if (e.classList.contains("active-dropdown")) 
+            {
+                dropdownContent.style.maxHeight = 0;
+                e.classList.remove("active-dropdown");
+            } 
+            else 
+            {
+                dropdownContent.style.maxHeight = dropdownContent.scrollHeight + "px";
+                e.classList.add("active-dropdown");
+            }
+        }
+    
+    </script>
 </body>
 </html>
