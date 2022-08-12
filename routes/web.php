@@ -14,9 +14,6 @@ use App\Http\Controllers\web\homeController;
 |
 */
 
-Route::get('/', function () 
-{
-    return view('components.web.index',[homeController::class,'index']);
-});
+Route::get('/',[homeController::class,'index']);
 
 // Route::post('login',[App\Http\Controllers\Auth\LoginController::class,'login'])->name('existingUserLogin');

@@ -10,47 +10,29 @@
     <div class="p-[5px]">
         <div class="p-2 relative">
             
-            <div class="featured-carousel owl-carousel">
-                <div class="item">
-                   <img src="https://images.unsplash.com/photo-1659940316181-d34bf23ae835?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" alt="">
-                </div>
-                <div class="item">
-                   <img src="https://images.unsplash.com/photo-1659923183026-0721b7b6b053?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80" alt="">
-                </div>
-                <div class="item">
-                   <img src="https://images.unsplash.com/photo-1659830686710-9c6df95f8cf3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2076&q=80" alt="">
-                </div>
-                <div class="item">
-                   <img src="https://images.unsplash.com/photo-1659892972074-b7707000415d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1204&q=80" alt="">
-                </div>
-            </div>
+            <section>
+                ss
+            </section>
 
-            <div class="grid grid-cols-4 gap-5 ">
-                <div class="col-span-1">
+            <div class="flex flex-col gap-5">
+                
+                <section class="grid grid-cols-1 py-10">
+                    <h1 class="text-center font-medium text-transparent text-4xl bg-clip-text bg-gradient-to-r from-[#cd762a] to-[#F2994A]">Search Your Dream Components</h1>
+                </section>
 
-                    <div class="shadow-lg rounded-2xl relative bg-red-500 pt-14">
-
-                        <div class="absolute top-6 left-5 z-10">
-                            <img class="object-cover w-16 h-16 rounded-full outline outline-white" src="https://cdn.dribbble.com/userupload/2776604/file/original-6683b4718849db80771553e606fc52d8.png?compress=1&resize=1024x768" alt="">
-                        </div>
-
-                        <div class="bg-slate-400 rounded-2xl p-5 min-h-[12rem] relative">
-                            <h1 class="mt-5 font-semibold leading-7 text-lg">BitCoins</h1>
-                            <p class="leading-7 line-clamp-2 text-slate-600">The Bitcoin price is $23,944.60, a change of 3.68% over the past 24 hours as of 11:00 p.m. The recent price action in Bitcoin left the token's market</p>
-                        </div>
-
-                        {{-- <div class="bg-red-500 translate-y-14 rounded-xl">
-                            <div class="px-5">
-                                <img class="object-cover w-20 h-20 rounded-full -translate-y-10 outline outline-white" src="https://cdn.dribbble.com/userupload/2776604/file/original-6683b4718849db80771553e606fc52d8.png?compress=1&resize=1024x768" alt="">
-                                <h1>Title Product</h1>
+                <section class="relative">
+                    <div class="featured-carousel owl-carousel">
+                        @foreach ($productType as $type)
+                            <div class="item"> 
+                                <button class="w-full p-2 text-base bg-[color:#2D9CDB] rounded-md text-white">
+                                    {{ $type->name ?? '' }}
+                                </button>
                             </div>
-                        </div> --}}
-
-
-
+                        @endforeach
                     </div>
+                </section>
+    
 
-                </div>
             </div>
 
             {{-- <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-2">
@@ -72,7 +54,7 @@
     $('.owl-carousel').owlCarousel(
         {
             stagePadding: 50,
-            loop: true,
+            loop: false,
             margin: 10,
             nav: true,
             navText: [
@@ -82,7 +64,16 @@
             navContainer: '.custom-nav',
             responsive:{
                 0:{
-                    items: 1
+                    items: 2
+                },
+                600: {
+                    items:5
+                },
+                900: {
+                    items:6
+                },
+                1000: {
+                    items:8
                 }
             }
         }
