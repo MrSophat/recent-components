@@ -1,5 +1,9 @@
 <!DOCTYPE html>
-<html  lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html 
+    lang="{{ str_replace('_', '-', app()->getLocale()) }}" 
+    x-data="{ darkMode: localStorage.getItem('dark') === 'true'} " 
+    x-init="$watch('darkMode', val => localStorage.setItem('dark', val))" 
+    :class="{ 'dark': darkMode }">
 <head>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ config('app.name', 'Laravel') }}</title>
@@ -8,7 +12,7 @@
     @yield('internalStyle')
 
 </head>
-<body>
+<body class="dark:bg-slate-900">
 
     <div>
         @include('components.admin.layouts.navigation')
@@ -16,7 +20,7 @@
         <div class="max-w-[100rem] mx-auto">
 
             <div class="sidebar">
-                <div class="sticky top-5 -ml-0.5 pointer-events-none">
+                <div class="sticky top-5 -ml-0.5">
                     @include('components.admin.layouts.sidebar')
                 </div>
             </div>
@@ -30,7 +34,7 @@
             
         </div>
 
-        @include('components.admin.layouts.footer')
+        @include('components.web.layouts.footer')
 
         @yield('internallStyle')
         <script>
