@@ -1,7 +1,7 @@
 @extends('web')
 @section('internalStyle')
     <link rel="stylesheet" href="{{ asset('css/carousel.css') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css">
 @endsection
 
@@ -26,13 +26,17 @@
             </div>
 
             <div class="flex flex-col gap-5">
-                
-                <section class="grid grid-cols-1 py-10">
-                    <h1 class="text-center font-medium text-transparent text-4xl bg-clip-text bg-gradient-to-r from-[#cd762a] to-[#F2994A]">Search Your Dream Components</h1>
-                    <div>
-                        Hero
+                <section>
+                    <div class="w-96 grid grid-cols-3 gap-3  skew-x-12 -skew-y-2">
+                        <div class="col-span-1 p-5 bg-red-500 rounded-md transition-all duration-500 hover:-translate-y-5"></div>
+                        <div class="col-span-1 p-5 bg-red-500 rounded-md transition-all duration-500 hover:-translate-y-5"></div>
+                        <div class="col-span-1 p-5 bg-red-500 rounded-md transition-all duration-500 hover:-translate-y-5"></div>
+                        <div class="col-span-1 p-5 bg-red-500 rounded-md transition-all duration-500 hover:-translate-y-5"></div>
+                        <div class="col-span-1 p-5 bg-red-500 rounded-md transition-all duration-500 hover:-translate-y-5"></div>
+                        <div class="col-span-1 p-5 bg-red-500 rounded-md transition-all duration-500 hover:-translate-y-5"></div>
+                        <div class="col-span-1 p-5 bg-red-500 rounded-md transition-all duration-500 hover:-translate-y-5"></div>
+                        <div class="col-span-1 p-5 bg-red-500 rounded-md transition-all duration-500 hover:-translate-y-5"></div>
                     </div>
-
                 </section>
 
                 <section class="grid grid-cols-2">

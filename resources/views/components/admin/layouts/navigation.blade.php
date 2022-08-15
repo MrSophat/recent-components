@@ -26,7 +26,7 @@
                     </nav>
 
 
-                    <button type="button" @click="darkMode = !darkMode" id="headlessui-listbox-button-4" class="mr-3">
+                    <button type="button" @click="darkMode = !darkMode" class="mr-3">
                         <span class="dark:hidden">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M12 18.5C15.5899 18.5 18.5 15.5899 18.5 12C18.5 8.41015 15.5899 5.5 12 5.5C8.41015 5.5 5.5 8.41015 5.5 12C5.5 15.5899 8.41015 18.5 12 18.5Z" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>

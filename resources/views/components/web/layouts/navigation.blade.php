@@ -25,7 +25,7 @@
 
 
                     <div class="flex pl-2 items-center border-l border-slate-200 gap-3 dark:border-slate-800/80">
-                        <label class="sr-only" id="headlessui-listbox-label-3">Theme</label>
+                        <label class="sr-only">Theme</label>
                         <button type="button" @click="darkMode = !darkMode">
                             <span class="hidden dark:inline">
                                 <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6">
