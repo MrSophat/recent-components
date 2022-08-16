@@ -47,7 +47,6 @@ window.NCModal = (optionControl) =>
                 clone.id        = "ncModal-" + randomNumber;
                 clone.className = "animate-fadeIn " + ncOptions.className ?? modalId.children[0].className;
                 const cloneTo   = document.getElementById(backDropID);
-                console.log(cloneTo);
                 cloneTo.appendChild(clone)
             } 
         }
@@ -57,19 +56,35 @@ window.NCModal = (optionControl) =>
         {
             if(typeof ncOptions.clickAway !== 'undefined') 
             {
-                if(ncOptions.clickAway == true){
-                    const clickAway = document.getElementById(backDropID)
-                    clickAway.addEventListener('click',()=>
+
+                function __clickedOnclose()
+                {
+                    const removeBTN = document.getElementsByClassName(ncOptions.removeBTN);
+                    for(i=0; i<removeBTN.length; i++)
                     {
+                        const buttonID = removeBTN[i];
+                        buttonID.addEventListener('click',()=>{
+                            backDropContainer.remove()
+                        })
+                    }
+                }
+
+                function __clickedAway()
+                {
+                    const clickAway = document.getElementById(backDropID)
+                    clickAway.addEventListener('click',()=>{
                         backDropContainer.remove();
                     })
                 }
-                if(ncOptions.clickAway == false){
-                    const removeBTN = document.getElementsByClassName(ncOptions.removeBTN)[1];
-                    removeBTN.addEventListener('click',()=>
-                    {
-                        backDropContainer.remove()
-                    })
+
+                if(ncOptions.clickAway == true)
+                {
+                    __clickedAway();
+                    __clickedOnclose();
+                }
+                if(ncOptions.clickAway == false)
+                {
+                    __clickedOnclose();
                 }
             }
         }

@@ -12,7 +12,7 @@
 </head>
 <body class="bg-white dark:bg-slate-900">
     <div>
-        @include('components.admin.layouts.navigation')
+        @include('components.web.layouts.navigation')
 
         <div class="max-w-[100rem] mx-auto">
             @yield('content')

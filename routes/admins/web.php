@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,11 +17,11 @@ use Illuminate\Support\Facades\Route;
 Route::prefix('/admin')->group(function() 
 {
     Auth::routes();
-    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('admin.home');
-
-    Route::get('/', function () {
-        return view('components.admin.form');
-    });
+    Route::get('/home',         [HomeController::class, 'index'])->name('admin.index');
+    Route::get('/modal',        [HomeController::class, 'modal'])->name('modal.index');
+    Route::get('/modal~demo',   [HomeController::class, 'modalDemo'])->name('modal.demo');
+    Route::get('/tabs',         [HomeController::class, 'tabs'])->name('tabs.index');
+    Route::get('/tabs~demo',    [HomeController::class, 'tabsDemo'])->name('tabs.demo');
 });
 
 

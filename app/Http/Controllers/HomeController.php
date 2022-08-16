@@ -21,8 +21,31 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
+
+
+     
     public function index()
     {
         return view('components.admin.form');
+    }
+
+    public function modal()
+    {
+        return view('components.admin.modal.index');
+    }
+
+    public function modalDemo()
+    {
+        return view('components.admin.modal.demo');
+    }
+
+    public function tabs()
+    {
+        return view('components.admin.tabs.index');
+    }
+
+    public function tabsDemo()
+    {
+        return view('components.admin.tabs.demo');
     }
 }

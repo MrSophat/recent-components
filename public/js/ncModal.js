@@ -50,7 +50,6 @@ window.NCModal = function (optionControl) {
         clone.id = "ncModal-" + randomNumber;
         clone.className = (_ref = "animate-fadeIn " + ncOptions.className) !== null && _ref !== void 0 ? _ref : modalId.children[0].className;
         var cloneTo = document.getElementById(backDropID);
-        console.log(cloneTo);
         cloneTo.appendChild(clone);
       }
     }
@@ -59,18 +58,32 @@ window.NCModal = function (optionControl) {
 
     function __removeModal() {
       if (typeof ncOptions.clickAway !== 'undefined') {
-        if (ncOptions.clickAway == true) {
+        var __clickedOnclose = function __clickedOnclose() {
+          var removeBTN = document.getElementsByClassName(ncOptions.removeBTN);
+
+          for (i = 0; i < removeBTN.length; i++) {
+            var buttonID = removeBTN[i];
+            buttonID.addEventListener('click', function () {
+              backDropContainer.remove();
+            });
+          }
+        };
+
+        var __clickedAway = function __clickedAway() {
           var clickAway = document.getElementById(backDropID);
           clickAway.addEventListener('click', function () {
             backDropContainer.remove();
           });
+        };
+
+        if (ncOptions.clickAway == true) {
+          __clickedAway();
+
+          __clickedOnclose();
         }
 
         if (ncOptions.clickAway == false) {
-          var removeBTN = document.getElementsByClassName(ncOptions.removeBTN)[1];
-          removeBTN.addEventListener('click', function () {
-            backDropContainer.remove();
-          });
+          __clickedOnclose();
         }
       }
     }

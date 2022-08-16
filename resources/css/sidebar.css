@@ -1,20 +1,25 @@
-.sidebar{
+.sidebar
+{
     @apply hidden 
         lg:block 
         fixed 
         z-20 
         bg-white 
-        dark:bg-slate-800
+        dark:bg-slate-900
         /* shadow-md  */
         inset-0 
         border-r
-        dark:border-slate-600
+        dark:border-slate-800
         xl:inset-auto 
         top-[3.5125rem] 
         right-auto 
-        sm:w-[15.5rem] 
+        sm:w-[17rem] 
         pb-10 
         px-2
         overflow-y-auto 
         h-full
-    }
+}
+
+.currentActive {
+    @apply from-orange-200 to-red-200 dark:from-orange-500 dark:to-red-500
+}

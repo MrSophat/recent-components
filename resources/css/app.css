@@ -2,9 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
 @layer base {
-  @import url('./header.css');
-  @import url('./sidebar.css');
+    @import url('./header.css');
+    @import url('./sidebar.css');
+
+    p {
+        @apply text-slate-800 dark:text-slate-400
+    }
 }
 
 
@@ -74,16 +80,4 @@
 }
 
 
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
-
-.animate-fadeIn {
-    animation: fadeIn .2s ease-in forwards;
-}
+@import url('./animate.css');

@@ -8,24 +8,15 @@
 @section('content')
     <div class="p-[5px]">
         <div class="p-2 relative">
+            
+            <section>
+                ss
+            </section>
 
             <div class="flex flex-col gap-5">
                 
                 <section class="grid grid-cols-1 py-10">
                     <h1 class="text-center font-medium text-transparent text-4xl bg-clip-text bg-gradient-to-r from-[#cd762a] to-[#F2994A]">Search Your Dream Components</h1>
-                    <div class="col-span-1 mx-auto mt-5">
-                        <input type="search" name="search" onclick="clickkk()" id="" class="w-[32rem] border py-2 px-4 rounded-md focus:outline-none" placeholder="Search... Ctrl + K">
-                    </div>
-
-                    <nc-modal id="ncModal" hidden>
-                        <div>
-                            <button class="ncModalRemove">
-                                remove
-                            </button>
-                        </div>
-                    </nc-modal>
-
-                    </div>
                 </section>
 
                 <section class="relative">
@@ -43,6 +34,12 @@
 
             </div>
 
+            {{-- <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-2">
+                
+                <div class="h-72 col-span-1 rounded-md last:col-span-2 first:col-span-3 p-5 bg-slate-800">
+                    sss
+                </div>
+            </div> --}}
 
 
         </div>
@@ -67,7 +64,7 @@
     $('.owl-carousel').owlCarousel(
         {
             stagePadding: 50,
-            loop: false,
+            loop: true,
             margin: 10,
             nav: true,
             navText: [
@@ -77,16 +74,7 @@
             navContainer: '.custom-nav',
             responsive:{
                 0:{
-                    items: 2
-                },
-                600: {
-                    items:5
-                },
-                900: {
-                    items:6
-                },
-                1000: {
-                    items:8
+                    items: 1
                 }
             }
         }
