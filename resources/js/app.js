@@ -1,2 +1,4 @@
 import './sidebar'
-import './ncTabs'
+// import './ncTabs'
+
+import 'nc-modal'
